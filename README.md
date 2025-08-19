@@ -62,30 +62,85 @@
 
 ## 📂 커리큘럼
 
-### **Week 1: 오리엔테이션 & 환경 설정**
-- **이론**: 임베디드 시스템 개요, Jetson Nano 구조, 캡스톤 디자인 연계성  
-- **실습**: OS 설치, 기본 설정(Wi-Fi, SSH), Python/OpenCV 설치, 간단한 GPIO 제어  
+## **1주차 – 개발 환경 구축 & 리눅스 기초**
+- Jetson Orin Nano 소개 (Nano ↔ Orin 비교)  
+- OS 설치 및 초기 세팅 (언어/계정/네트워크)  
+- SSH, VSCode Remote 환경 설정  
+- Linux 기본 명령어 (`ls`, `cd`, `mkdir`, `vim`)  
+- `jtop` 설치 및 시스템 자원 모니터링  
+- **실습**: 보드 접속 및 기본 명령어 사용  
 
 ---
 
-### **[Part 1: 리눅스 & 디바이스 제어 (총 8주)]**
+## **2주차 – Python & 파일 권한**
+- Python3 환경 확인 및 실행  
+- argparse 모듈 기초 (CLI 인자 입력)  
+- Linux 파일 권한 구조(`rwx`, `chmod`)  
+- **실습**:  
+  - `test.py` 작성 후 실행  
+  - argparse 활용 간단 계산기 구현  
 
-#### **Week 2-3: 리눅스 및 기본 명령어 학습**
-- 파일 시스템, 패키지 관리(apt), 프로세스 제어  
-- GitHub 기반 코드 관리 실습  
+---
 
-#### **Week 4-5: 디바이스 입출력 제어**
-- LED, 부저, 모터, 초음파 센서, 온습도 센서 연결  
-- 경계값 설정 → 하드웨어 알람 실습  
+## **3주차 – GPIO & PWM 제어 (LED, 부저, 서보 통합)**
+- GPIO 핀맵 및 Jetson.GPIO 활용  
+- PWM 원리 (Duty Cycle, Frequency)  
+- **실습**:  
+  - LED 점등/점멸 + 밝기 제어 (PWM)  
+  - 부저로 음계 출력 (PWM 주파수 제어)  
+  - 서보 모터 각도 제어 (0° ↔ 180°)  
+- **추가 실습**: 버튼 입력에 따라 LED 밝기 변화 + 서보 회전 + 부저음 동기화  
 
-#### **Week 6-7: 카메라 모듈 사용법**
-- 카메라 연결 및 OpenCV 영상 처리 기초  
-- 카메라 + 센서 융합 실습 (예: 거리 측정 + 영상 표시)  
+---
 
-#### **Week 8: 중간 통합 실습**
-- 리눅스 + 디바이스 + 카메라를 모두 활용한 작은 프로젝트  
-- 예: "근접 감지 & 실시간 카메라 출력"  
+## **4주차 – I2C & SPI 통신 (OLED + ADC 통합)**
+- I2C 개념 및 장치 인식 (`i2cdetect`)  
+- SPI 개념 (MISO, MOSI, SCK, CS)  
+- **실습**:  
+  - I2C SSD1306 OLED: 텍스트/도형 출력  
+  - SPI MCP3208: 가변저항 입력 읽기  
+  - ADC 값 → OLED에 실시간 표시  
+- **추가 실습**: 조도 센서/가변저항 입력값을 OLED 그래프 형태로 출력  
 
+---
+
+## **5주차 – Jupyter & Tensor 기초**
+- Docker 컨테이너 실행, Jupyter Notebook 환경 구축  
+- Numpy 기본 연산 (배열 생성, 연산, 변환)  
+- PyTorch Tensor 기본 연산 및 GPU 활용  
+- Dataset & DataLoader 개념  
+- **실습**: MNIST 데이터 불러오기 & 시각화  
+
+---
+
+## **6주차 – CNN 기초 & 모델 훈련**
+- CNN 기본 구조 (Conv2d, ReLU, Pooling, Linear)  
+- PyTorch `nn.Module` 기반 CNN 정의  
+- **실습**:  
+  - MNIST 데이터셋으로 CNN 학습 (Epoch 조정)  
+  - 손실 함수 & Optimizer 변경 실험  
+- **추가 실습**: CIFAR10 데이터셋으로 확장  
+
+---
+
+## **7주차 – CNN 성능 향상 기법**
+- Normalization & Standardization  
+- Batch Size 효과 분석  
+- Model Complexity (레이어 수, 필터 크기)  
+- **실습**:  
+  - CIFAR100 데이터셋 학습  
+  - Batch size/Layer/Epoch 변화에 따른 정확도 비교  
+- **추가 실습**: Data Augmentation 일부 적용 (RandomCrop, Flip)  
+
+---
+
+## **8주차 – CNN 심화 & 시각화**
+- Batch Normalization & Dropout  
+- Feature Map 시각화, 오분류 케이스 분석  
+- **실습**:  
+  - BN/Dropout 적용 전후 성능 비교  
+  - Matplotlib으로 학습 곡선(Train vs Validation Loss) 시각화  
+- **추가 실습**: 직접 만든 작은 Dataset으로 Fine-tuning  
 ---
 
 ### **[Part 2: Object Detection & 응용 프로젝트 (총 6주)]**
