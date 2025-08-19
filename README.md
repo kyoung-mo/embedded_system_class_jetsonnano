@@ -24,9 +24,10 @@
 ---
 ### 참고 사이트
 
-Jetson Orin Nano : https://www.yahboom.net/study/Jetson-Orin-NANO
-Jetson Nano 4GB : https://www.yahboom.net/study/jetson-nano-2
-Jetson Nano 2GB : https://www.yahboom.net/study/Jetson-nano-2GB
+|Jetson Orin Nano : https://www.yahboom.net/study/Jetson-Orin-NANO|
+|Jetson Nano 4GB : https://www.yahboom.net/study/jetson-nano-2|
+|Jetson Nano 2GB : https://www.yahboom.net/study/Jetson-nano-2GB|
+
 ---
 
 # 📘 내년 임베디드 시스템 수업 계획 (수정안)
