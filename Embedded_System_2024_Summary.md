@@ -131,3 +131,83 @@
   - 저장된 모델 불러와 추가 학습
 - **탐구 과제**
   - Epochs 및 데이터 크기에 따른 성능 차이 분석  
+
+---
+
+## Week 11 – 감정 인식 분류 (Jupyter Notebook)
+- **이론**
+  - `classification_interactive.ipynb` 수정  
+    - `TASK='thumbs'` → 주석 처리  
+    - `TASK='emotions'` 활성화  
+    - 카테고리: `['none', 'happy', 'sad', 'angry']`
+- **실습**
+  - Jupyter Notebook에서 한 셀씩 실행  
+  - 데이터셋: 4가지 감정 각각 30장 촬영 후 학습  
+- **추가 실습**
+  1. 데이터셋 확대 + Epochs 증가 → 성능 향상 확인  
+  2. Thumbs, Emotions 외 다른 예제도 실습  
+
+---
+
+## Week 12 – 회귀 분석 (Jupyter Notebook)
+- **이론**
+  - `regression_interactive.ipynb` 실행  
+  - Regression 실습으로 데이터와 출력값 관계 확인  
+- **실습**
+  - 9번째 셀에서 데이터셋 수집 (사용자가 직접 클릭하여 위치 지정)  
+  - 3종류 데이터 각각 30장 촬영 후 학습  
+- **탐구 과제**
+  - Epochs 값 변화에 따른 모델 성능 비교  
+  - Classification 실습과의 차이 분석  
+
+---
+
+## Week 13 – Jetson-Inference (Imagenet & Detectnet)
+- **이론**
+  - WinSCP 사용 → Windows ↔ Jetson Nano 간 파일 전송  
+  - Jetson-Inference 설치 (git, cmake, numpy 등 패키지 설치 후 빌드)
+- **실습**
+  - `imagenet.py` 실행: 이미지 분류 (입력/출력 경로 지정)  
+  - WinSCP로 입력 이미지 업로드 & 결과 다운로드  
+  - 동영상 파일 입력 시 추론 결과 확인  
+  - `detectnet.py /dev/video0` 실행 → 실시간 객체 탐지
+- **탐구 과제**
+  - `imagenet` vs `detectnet` 차이점 비교  
+  - 다른 모델 파라미터 적용 (`resnet18`, `ssd-mobilenet-v2`) → 성능 비교  
+
+---
+
+## Week 14 – TensorRT 최적화
+- **이론**
+  - JetPack OS에는 CUDA, cuDNN, TensorRT 포함  
+  - TensorRT 기능: 양자화(FP32 → FP16/INT8), 레이어 결합(Conv+BN+Act)  
+  - ONNX 포맷 모델을 TensorRT 엔진으로 변환 가능
+- **실습**
+  1. CNN 모델 학습 후 `cnn_model.onnx` 생성  
+  2. TensorRT 변환  
+     - FP32 엔진: `cnn_model_fp32.trt`  
+     - FP16 엔진: `cnn_model_fp16.trt`  
+  3. 추론 시간 비교 (FP32 vs FP16)  
+  4. 레이어 결합 모델(`fused_model`, `nonfused_model`) 성능 비교
+- **추가 실습**
+  1. 채널 폭(좁은/넓은 모델)에 따른 속도 차이 확인  
+  2. 레이어 깊이(깊은/얕은 모델)에 따른 성능 차이 비교  
+
+---
+
+# 📌 부록 (초기 설정 관련)
+
+### Jetson Nano Headless Setup
+- OS 다운로드 및 SD카드 굽기 (SD Formatter, Etcher)  
+- PuTTY를 통한 시리얼 연결, 초기 언어·국가·계정 설정  
+- Wi-Fi 연결(`nmcli`), 인터넷 연결 확인(`ping 8.8.8.8`)  
+- PowerShell을 이용한 SSH 접속  
+
+### SD Card Format
+- OS 오류, JetPack 재설치 시 SD 카드 포맷 필요  
+- `diskpart` → `list disk` → `select disk` → `clean` 과정 수행 후 SD Formatter로 포맷  
+
+### Jtop 설치
+- `apt-get update` → `apt-get install python-pip`  
+- `pip install jetson-stats` 설치 후 재부팅  
+- `jtop` 실행으로 CPU, GPU, 메모리 상태 확인  
