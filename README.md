@@ -22,11 +22,13 @@
 리눅스 , 디바이스, 카메라 - 8주차
 
 ---
-### 참고 사이트
 
-|Jetson Orin Nano : https://www.yahboom.net/study/Jetson-Orin-NANO|
-|Jetson Nano 4GB : https://www.yahboom.net/study/jetson-nano-2|
-|Jetson Nano 2GB : https://www.yahboom.net/study/Jetson-nano-2GB|
+| 참고 사이트 | 링크 |
+|-------------|------|
+| Jetson Orin Nano | https://www.yahboom.net/study/Jetson-Orin-NANO |
+| Jetson Nano 4GB  | https://www.yahboom.net/study/jetson-nano-2 |
+| Jetson Nano 2GB  | https://www.yahboom.net/study/Jetson-nano-2GB |
+
 
 ---
 
