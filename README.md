@@ -10,7 +10,6 @@
 | Jetson Nano 4GB  | https://www.yahboom.net/study/jetson-nano-2 |
 | Jetson Nano 2GB  | https://www.yahboom.net/study/Jetson-nano-2GB |
 
-
 ---
 
 # 📘 내년 임베디드 시스템 수업 계획 (수정안)
@@ -190,3 +189,4 @@
 
 0819 : 
 
+필요 물품 리스트업 및 남은 6주차동안 어떤 프로젝트할지 완성
