@@ -62,27 +62,23 @@
 
 ## 📂 커리큘럼
 
-## **1주차 – 개발 환경 구축 & 리눅스 기초**
+## **1주차 – 개발 환경 구축 & 리눅스 기초, Python & 파일 권한**
 - Jetson Orin Nano 소개 (Nano ↔ Orin 비교)  
 - OS 설치 및 초기 세팅 (언어/계정/네트워크)  
 - SSH, VSCode Remote 환경 설정  
 - Linux 기본 명령어 (`ls`, `cd`, `mkdir`, `vim`)  
-- `jtop` 설치 및 시스템 자원 모니터링  
-- **실습**: 보드 접속 및 기본 명령어 사용  
-
----
-
-## **2주차 – Python & 파일 권한**
+- `jtop` 설치 및 시스템 자원 모니터링
 - Python3 환경 확인 및 실행  
 - argparse 모듈 기초 (CLI 인자 입력)  
 - Linux 파일 권한 구조(`rwx`, `chmod`)  
 - **실습**:  
   - `test.py` 작성 후 실행  
   - argparse 활용 간단 계산기 구현  
+  - 보드 접속 및 기본 명령어 사용  
 
 ---
 
-## **3주차 – GPIO & PWM 제어 (LED, 부저, 서보 통합)**
+## **2주차 – GPIO & PWM 제어 (LED, 부저, 서보 통합)**
 - GPIO 핀맵 및 Jetson.GPIO 활용  
 - PWM 원리 (Duty Cycle, Frequency)  
 - **실습**:  
@@ -93,7 +89,7 @@
 
 ---
 
-## **4주차 – I2C & SPI 통신 (OLED + ADC 통합)**
+## **3주차 – I2C & SPI 통신 (OLED + ADC 통합)**
 - I2C 개념 및 장치 인식 (`i2cdetect`)  
 - SPI 개념 (MISO, MOSI, SCK, CS)  
 - **실습**:  
@@ -104,7 +100,7 @@
 
 ---
 
-## **5주차 – Jupyter & Tensor 기초**
+## **4주차 – Jupyter & Tensor 기초**
 - Docker 컨테이너 실행, Jupyter Notebook 환경 구축  
 - Numpy 기본 연산 (배열 생성, 연산, 변환)  
 - PyTorch Tensor 기본 연산 및 GPU 활용  
@@ -113,7 +109,7 @@
 
 ---
 
-## **6주차 – CNN 기초 & 모델 훈련**
+## **5주차 – CNN 기초 & 모델 훈련**
 - CNN 기본 구조 (Conv2d, ReLU, Pooling, Linear)  
 - PyTorch `nn.Module` 기반 CNN 정의  
 - **실습**:  
@@ -123,7 +119,7 @@
 
 ---
 
-## **7주차 – CNN 성능 향상 기법**
+## **6주차 – CNN 성능 향상 기법**
 - Normalization & Standardization  
 - Batch Size 효과 분석  
 - Model Complexity (레이어 수, 필터 크기)  
@@ -134,13 +130,28 @@
 
 ---
 
-## **8주차 – CNN 심화 & 시각화**
+## **7주차 – CNN 심화 & 시각화**
 - Batch Normalization & Dropout  
 - Feature Map 시각화, 오분류 케이스 분석  
 - **실습**:  
   - BN/Dropout 적용 전후 성능 비교  
   - Matplotlib으로 학습 곡선(Train vs Validation Loss) 시각화  
-- **추가 실습**: 직접 만든 작은 Dataset으로 Fine-tuning  
+- **추가 실습**: 직접 만든 작은 Dataset으로 Fine-tuning
+  
+---
+
+## **8주차 – 객체 탐지(Object Detection) & 카메라 활용**
+- 객체 탐지 기본 개념 (Classification vs Detection vs Segmentation)  
+- 카메라 입력 처리 과정 (프레임 캡처, 전처리, 후처리)  
+- YOLO 계열 모델 개요 (YOLOv3 ~ YOLOv8 특징, 임베디드 친화적 모델)  
+- **실습**:  
+  - OpenCV로 카메라 영상 캡처 및 출력  
+  - 사전 학습된 YOLOv5/YOLOv8 모델 적용 → 실시간 객체 탐지  
+  - Bounding Box 및 Confidence Score 시각화  
+- **추가 실습**:  
+  - 특정 객체 탐지 시 LED/부저 동작 (GPIO 제어)  
+  - 직접 수집한 Dataset으로 YOLO Fine-tuning
+ 
 ---
 
 ### **[Part 2: Object Detection & 응용 프로젝트 (총 6주)]**
