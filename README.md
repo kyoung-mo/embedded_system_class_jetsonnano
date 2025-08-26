@@ -10,6 +10,10 @@
 | Jetson Nano 4GB  | https://www.yahboom.net/study/jetson-nano-2 |
 | Jetson Nano 2GB  | https://www.yahboom.net/study/Jetson-nano-2GB |
 
+Orin Nano에서 참고할만한 프로젝트
+
+5.8 Train image classification models(이미지 분류 모델 학습)
+
 ---
 
 # 📘 내년 임베디드 시스템 수업 계획 (수정안)
@@ -136,17 +140,60 @@
 
 ### **[Part 2: Object Detection & 응용 프로젝트 (총 6주)]**
 
-#### **Week 9-10: Object Detection 기초**
-- YOLOv8 기반 객체 탐지 실습  
-- Jetson Nano 최적화 기법(FPS 확인, TensorRT 변환)  
+## **Week 9-10: 프로젝트 A – 객체 탐지 + 디바이스 제어**
+- **이론**
+  - YOLOv8 기본 구조와 원리
+  - Jetson Nano에서 카메라 입력 처리(OpenCV)
+  - GPIO 및 PWM 제어 복습 (LED/부저 제어)
+  - 초음파 센서(HC-SR04) 동작 원리
 
-#### **Week 11-12: 객체 탐지 + 하드웨어 연동**
-- 특정 클래스 탐지 시 LED·부저 동작  
-- 객체 종류 + 거리 표시 (카메라 + 센서 융합)  
+- **실습**
+  - 카메라 영상 캡처 및 YOLOv8 모델 적용
+  - Bounding Box + Confidence Score 출력
+  - 특정 객체 감지 시 LED/부저 동작
+  - 초음파 센서와 연동하여 객체 거리 표시
 
-#### **Week 13-14: 실시간 응용 프로젝트**
-- 예시: AI 블랙박스 / 스마트 CCTV / 안전 감지 시스템  
-- 영상 스트리밍 + 원격 제어 기능 포함  
+- **Output**
+  - 실시간 카메라 영상에 Bounding Box + 거리 출력
+  - 탐지 이벤트 발생 시 LED 점등, 부저 경고음
+
+---
+
+## **Week 11-12: 프로젝트 B – IoT 환경 감지 시스템**
+- **이론**
+  - IoT 기본 개념 및 센서 네트워크 구조
+  - 온습도 센서(DHT22), 가스 센서(MQ-2) 원리
+  - OLED 디스플레이 출력 방법
+  - MQTT/Firebase를 활용한 클라우드 연동 개요
+
+- **실습**
+  - 센서 데이터 수집 및 실시간 출력
+  - OLED에 온도/습도/가스 수치 표시
+  - 위험 수치 초과 시 LED/부저 경고
+  - MQTT/Firebase로 센서 데이터 업로드 (선택)
+
+- **Output**
+  - 자리에서 바로 시연 가능한 **스마트 화재/환경 감지 시스템**
+
+---
+
+## **Week 13-14: 프로젝트 C – AI CCTV / 안전 감지**
+- **이론**
+  - 스마트 CCTV 및 안전 감지 시스템 개요
+  - Motion Detection / YOLO 기반 객체 탐지 비교
+  - IoT 센서 + 카메라 융합 방식 (멀티 모달)
+  - 클라우드 알림(Firebase) 구조
+
+- **실습**
+  - 카메라 입력 기반 실시간 CCTV 구현
+  - 특정 영역 침입 시 LED/부저 알림
+  - 화면에 경고 메시지 출력
+  - 센서(온습도/가스)와 결합해 멀티 모달 안전 감지 시스템 구성
+
+- **Output**
+  - **AI CCTV** 시연 (객체 탐지 + 센서 연동 + 알림)
+  - 캡스톤 디자인에 직접 확장 가능한 종합 프로젝트
+
 
 ---
 
