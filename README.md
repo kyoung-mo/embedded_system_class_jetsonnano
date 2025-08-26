@@ -1,4 +1,4 @@
-# 임베디드 시스템 (Jetson Nano 2GB 기반) – 실전형 프로젝트 중심
+# 임베디드 시스템 (Jetson Orin Nano 사용) – 실전형 프로젝트 중심
 
 
 
